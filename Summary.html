@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            let data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['applicants', 10],
+                ['interviews', 5],
+                ['forwards', 1],
+            ]);
+
+            let options = {
+                pieHole: 0.4,
+            };
+
+            let chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            let data = google.visualization.arrayToDataTable([
+                ["Element", "Density", { role: "style" }],
+                ["F", 13, "#b87333"],
+                ["U", 3, "silver"],
+                ["C", 27, "gold"],
+                ["K", 35, "color: #e5e4e2"]
+            ]);
+
+            let view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            let options = {
+                bar: { groupWidth: "95%" },
+                legend: { position: "none" },
+            };
+            let chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+            chart.draw(view, options);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="menu">
+            <div class="up__menu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="img/menu_open.png" alt="menu_open">
+                        </a>
+                    </li>
+                    <li class="inputWrapper">
+                        <div class="icon">
+                            <img src="img/search.png" alt="search">
+                        </div>
+                        <input class="inputSearch" type="search" autocomplete="off"
+                            placeholder="Search for a job, task or resume" />
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/person.png" alt="person_add">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/event.png" alt="event">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/th_small.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div #="downMenu">
+                <div class="wrapperDownMenu">
+                    <div class="down__menu">
+                        <div class="downMenuInner">
+                            <h2>Customer Service Representative</h2>
+                            <div>
+                                <img src="img/location_on.png" alt="location">
+                                <h3>
+                                    San Francisco, CA . <span style="color: rgb(41, 28, 235);">Preview this post</span>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="down__menu__btn">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <h3>
+                                            open
+                                            </h2>
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="#">
+                                        <img src="img/bookmark.png" alt="bookmark">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/create.png" alt="create">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/delete_outline.png" alt="delete_outline">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <a href="#">summary</a>
+                            </li>
+                            <li>
+                                <a href="#">applicants</a>
+                            </li>
+                            <li>
+                                <a href="#">job board</a>
+                            </li>
+                            <li>
+                                <a href="#">interviews</a>
+                            </li>
+                            <li>
+                                <a href="#">activity</a>
+                            </li>
+                            <li>
+                                <a href="#">broadcast</a>
+                            </li>
+                            <li>
+                                <a href="#">notifications</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="chartWrapper">
+                <div id="donutchart"></div>
+                <div id="columnchart_values"></div>
+            </div>
+            <div class="infoWrapper">
+                <div class="basicInfo">
+                    <div class="titleInfo">
+                        <div class="block">
+                            <div class="block__info">job description</div>
+                            <div class="block__information">EDIT</div>
+                        </div>
+                        <hr>
+                        <div class="block">
+                            <div class="block__info">position title</div>
+                            <div class="block__information">Customer Service Representative</div>
+                        </div>
+                        <hr>
+                        <div class="block">
+                            <div class="block__info">location</div>
+                            <div class="block__information">San Francisco, CA</div>
+                        </div>
+                        <hr>
+                        <div class="block">
+                            <div class="block__info">employment type</div>
+                            <div class="block__information">Full-time</div>
+                        </div>
+                        <hr>
+                        <div class="block">
+                            <div class="block__info">experience</div>
+                            <div class="block__information">Mid-level</div>
+                        </div>
+                        <hr>
+                        <div class="block">
+                            <div class="block__info">status</div>
+                            <div class="block__information">Open</div>
+                        </div>
+                        <hr>
+                        <div class="block">
+                            <div class="block__info">description</div>
+                            <div class="block__information">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Temporibus odio nam quos blanditiis possimus quae quasi commodi illum alias
+                                reprehenderit
+                                tempore consequatur, consectetur cumque praesentium similique tenetur excepturi in, enim
+                                asperiores voluptatum? Aspernatur iste laboriosam numquam laborum rerum, quis nostrum
+                                velit
+                                debitis quia modi architecto sapiente, ex quam hic harum!</div>
+                        </div>
+                        <hr>
+                        <div class="block">
+                            <div class="block__info">hiring lead</div>
+                            <div class="block__information">Tom Tizzy</div>
+                        </div>
+                        <hr>
+                        <div class="block">
+                            <div class="block__info">approved salary</div>
+                            <div class="block__information">$58000</div>
+                        </div>
+                    </div>
+                </div>
+                <aside>
+                    <div class="btn">
+                        <ul>
+                            <li>
+                                <a class="btnFB" href="#" alt="facebook">Post to Facebook</a>
+                            </li>
+                            <li>
+                                <a class="btnTweet" href="#" alt="twitter">Tweet this Job</a>
+                            </li>
+                            <li>
+                                <a class="btnLink" href="#" alt="linkedin">Post to Linkedin</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <h2>
+                            Link to this Job
+                        </h2>
+                        <h3>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur harum repellat
+                            cupiditate fugiat voluptates! Ea officia illum laudantium dignissimos maiores.
+                        </h3>
+                        <input class="inputBoxSearch" type="search" autocomplete="off"
+                            placeholder="Lorem ipsum dolor sit amet." />
+                    </div>
+                    <hr>
+                    <div class="box">
+                        <h2>
+                            Use the Button Widget
+                        </h2>
+                        <h3>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur harum repellat
+                            cupiditate fugiat voluptates! Ea officia illum laudantium dignissimos maiores.
+                        </h3>
+                        <input class="inputBoxSearch" type="search" autocomplete="off"
+                            placeholder="Lorem ipsum dolor sit amet." />
+                    </div>
+                    <hr>
+                    <div class="box">
+                        <h2>
+                            Upload Resumes by Email
+                        </h2>
+                        <h3>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur harum repellat
+                            cupiditate fugiat voluptates! Ea officia illum laudantium dignissimos maiores.
+                        </h3>
+                        <input class="inputBoxSearch" type="search" autocomplete="off"
+                            placeholder="tomtizzy@gmail.com" />
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
